@@ -1,10 +1,12 @@
 #!/usr/bin/env groovy
 
-def String call(String fileName, String imageName) {
+def String call(imageName, environment) {
     if (!imageName?.trim()) {
         println 'Specify image name'
         return
     }
+
+    def fileName = getFileNameWithDeployedVersions(environment)
 
     if (fileExists(fileName)) {
         def prefix = "${imageName}"

@@ -5,7 +5,7 @@ def call(pipelineParams, deploymentStatus) {
     if (!environment?.trim()) {
         return
     }
-    def versionFileName = "/var/jenkins_home/tmp/modas/modas-${environment}.versions";
+    def versionFileName = getFileNameWithDeployedVersions(environment)
 
     modasStoreDeployedVersion(versionFileName, 'modas/modas_frontend', pipelineParams.GUI_VERSION, deploymentStatus)
     modasStoreDeployedVersion(versionFileName, 'modas/modas_backend_releasing', pipelineParams.RELEASING_VERSION, deploymentStatus)
