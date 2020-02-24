@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def String readVersion(String fileName, String imageName) {
+def String call(String fileName, String imageName) {
     if (!imageName?.trim()) {
         println 'Specify image name'
         return

@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def storeVersion(String versionFileName, String imageName, String imageVersion, String deploymentStatus) {
+def call(String versionFileName, String imageName, String imageVersion, String deploymentStatus) {
     if (!imageVersion?.trim()) {
         return
     }
